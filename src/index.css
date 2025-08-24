@@ -136,7 +136,8 @@
 
   /* Project cards */
   .project-card {
-    @apply relative overflow-hidden rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-500 hover-glow;
+    @apply relative overflow-hidden rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-500 hover-glow;
+    background: var(--gradient-card);
   }
 
   /* Glowing text effect */
