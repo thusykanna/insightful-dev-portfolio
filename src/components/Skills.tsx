@@ -14,15 +14,20 @@ import {
 const Skills = () => {
   const skills = [
     { name: 'HTML', icon: FileCode2, category: 'Frontend' },
-    { name: 'JavaScript', icon: Code2, category: 'Programming' },
-    { name: 'React', icon: Layers, category: 'Frontend' },
-    { name: 'React Native', icon: Smartphone, category: 'Mobile' },
-    { name: 'Python', icon: Server, category: 'Backend' },
     { name: 'Java', icon: Cpu, category: 'Programming' },
+    { name: 'Spring Boot', icon: Server, category: 'Backend' },
+    { name: 'JavaScript', icon: Code2, category: 'Programming' },
+    { name: 'Python', icon: Server, category: 'Backend' },
     { name: 'C++', icon: Monitor, category: 'Programming' },
     { name: 'MongoDB', icon: Database, category: 'Database' },
     { name: 'MySQL', icon: Database, category: 'Database' },
+    { name: 'Node.js', icon: Globe, category: 'Backend' },
+    { name: 'Next.js', icon: Layers, category: 'Frontend' },
+    { name: 'React Native', icon: Smartphone, category: 'Mobile' },
     { name: 'Figma', icon: Palette, category: 'Design' },
+    { name: 'Canva', icon: Palette, category: 'Design' },
+    { name: 'Lightroom', icon: Palette, category: 'Design' },
+    { name: 'Express', icon: Server, category: 'Backend' },
   ];
 
   const categories = ['All', 'Frontend', 'Backend', 'Mobile', 'Database', 'Design', 'Programming'];
@@ -51,24 +56,26 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {skills.map((skill, index) => (
-            <div
-              key={skill.name}
-              className={`skill-icon group fade-in fade-in-delay-${(index % 5) + 1}`}
-            >
-              <skill.icon 
-                size={28} 
-                className="text-muted-foreground group-hover:text-primary transition-colors duration-300" 
-              />
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="bg-card/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap border border-border/50">
-                  {skill.name}
+        {/* Dynamic Floating Skills */}
+        <div className="relative h-64 overflow-hidden rounded-2xl bg-gradient-to-r from-primary/5 to-accent/5 border border-border/30">
+          <div className="floating-skills-container">
+            {skills.map((skill, index) => (
+              <div
+                key={skill.name}
+                className="floating-skill"
+                style={{
+                  animationDelay: `${index * 0.8}s`,
+                  top: `${Math.random() * 80 + 10}%`,
+                  animationDuration: `${8 + Math.random() * 4}s`
+                }}
+              >
+                <div className="skill-badge">
+                  <skill.icon size={20} className="text-primary" />
+                  <span className="text-sm font-medium text-foreground ml-2">{skill.name}</span>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Skills Summary */}
