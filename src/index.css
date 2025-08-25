@@ -215,4 +215,100 @@
       opacity: 0; 
     }
   }
+
+  /* =========================================================
+     Two Ribbons (opposite, seamless, low resource)
+     ========================================================= */
+  /* Container with subtle edge fades */
+  .ribbon {
+    @apply relative w-full grid gap-3 py-2 overflow-hidden;
+  }
+
+  .ribbon img[src*="nextjs"] { 
+    filter: invert(1) brightness(1.2); 
+  }
+  .ribbon img[src*="express-original.svg"] {
+    filter: invert(2) brightness(1.2) contrast(1.1);
+  }
+  .ribbon img[src*="mongodb-original.svg"] {
+    filter: invert(1) brightness(1.5) contrast(1.2);
+  }
+  .ribbon::before,
+  .ribbon::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; width: 60px; pointer-events: none; z-index: 2;
+  }
+  .ribbon::before { 
+    left: 0; 
+    background: linear-gradient(to right, hsl(var(--background) / 0.9), transparent); 
+  }
+  .ribbon::after { 
+    right: 0; 
+    background: linear-gradient(to left, hsl(var(--background) / 0.9), transparent); 
+  }
+
+  /* Row height + mask to soften edges on non‑webkit browsers */
+  .ribbon-row {
+    position: relative;
+    height: 64px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 60px, black calc(100% - 60px), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, black 60px, black calc(100% - 60px), transparent 100%);
+  }
+
+  /* Moving track – duplicate content for seamless loop */
+  .ribbon-track {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: clamp(16px, 3vw, 32px);
+    will-change: transform;
+    animation: ribbon-move var(--ribbon-speed, 40s) linear infinite;
+  }
+  .ribbon-track.reverse {
+    animation-name: ribbon-move-reverse;
+  }
+
+  /* Each item box keeps spacing consistent */
+  .ribbon-item {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    height: 64px;
+    padding-inline: 2px;
+  }
+
+  /* Icon look */
+  .ribbon-item > img {
+    height: 48px;
+    width: auto;
+    display: block;
+    filter: saturate(0.9) contrast(1);
+    opacity: 0.95;
+    transition: transform 160ms ease, opacity 160ms ease;
+    will-change: transform, opacity;
+  }
+  .ribbon-item:hover > img {
+    transform: translateY(-1px) scale(1.02);
+    opacity: 1;
+  }
+
+  /* Keyframes (transform-only → GPU friendly) */
+  @keyframes ribbon-move {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* duplicate content → move by half */
+  }
+  @keyframes ribbon-move-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ribbon-track { 
+      animation: none; 
+      transform: translateX(0); 
+    }
+  }
 }

@@ -56,25 +56,59 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Dynamic Floating Skills */}
+        {/* Technology Icons Ribbon */}
         <div className="relative h-64 overflow-hidden rounded-2xl bg-gradient-to-r from-primary/5 to-accent/5 border border-border/30">
-          <div className="floating-skills-container">
-            {skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className="floating-skill"
-                style={{
-                  animationDelay: `${index * 0.8}s`,
-                  top: `${Math.random() * 80 + 10}%`,
-                  animationDuration: `${8 + Math.random() * 4}s`
-                }}
-              >
-                <div className="skill-badge">
-                  <skill.icon size={20} className="text-primary" />
-                  <span className="text-sm font-medium text-foreground ml-2">{skill.name}</span>
-                </div>
+          <div className="ribbon" style={{ '--ribbon-speed': '40s' } as React.CSSProperties}>
+            <div className="ribbon-row">
+              <div className="ribbon-track">
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/appwrite/appwrite-original.svg" alt="Appwrite" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" /></div>
+                {/* Duplicate for seamless loop */}
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/appwrite/appwrite-original.svg" alt="Appwrite" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" /></div>
               </div>
-            ))}
+            </div>
+            <div className="ribbon-row">
+              <div className="ribbon-track reverse" style={{ '--ribbon-speed': '35s' } as React.CSSProperties}>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg" alt="Notion" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" /></div>
+                {/* Duplicate for seamless loop */}
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg" alt="Notion" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" /></div>
+                <div className="ribbon-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" /></div>
+              </div>
+            </div>
           </div>
         </div>
 
