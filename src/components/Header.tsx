@@ -6,10 +6,10 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/thusykanna', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/thushanth-uthayarajan/', label: 'LinkedIn' },
+    // { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:thushanth.22@cse.mrt.ac.lk', label: 'Email' },
   ];
 
   const navItems = [
@@ -62,8 +62,8 @@ const Header = () => {
               className="ml-4 border-primary/20 hover:border-primary/50 hover:bg-primary/10"
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = '/cv-alex-developer.pdf';
-                link.download = 'Alex-Developer-CV.pdf';
+                link.href = '/Thushanth-Uthayarajan.pdf';
+                link.download = 'Thushanth-Uthayarajan.pdf';
                 link.click();
               }}
             >
@@ -118,8 +118,8 @@ const Header = () => {
                 className="border-primary/20 hover:border-primary/50 hover:bg-primary/10"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/cv-alex-developer.pdf';
-                  link.download = 'Alex-Developer-CV.pdf';
+                  link.href = '/Thushanth-Uthayarajan.pdf';
+                  link.download = 'Thushanth-Uthayarajan.pdf';
                   link.click();
                 }}
               >

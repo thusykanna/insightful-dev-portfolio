@@ -16,7 +16,7 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex@example.com',
+      value: '',
       href: 'mailto:alex@example.com',
       color: 'hover:text-red-400'
     },
@@ -24,14 +24,14 @@ const Contact = () => {
       icon: Github,
       label: 'GitHub',
       value: '@alexdev',
-      href: 'https://github.com',
+      href: 'https://github.com/thusykanna',
       color: 'hover:text-white'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'Alex Developer',
-      href: 'https://linkedin.com',
+      href: 'https://linkedin.com/in/thushanth-uthayarajan',
       color: 'hover:text-blue-400'
     },
     {
@@ -97,8 +97,8 @@ Your resume shows strong technical competency but could benefit from better stor
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/cv-alex-developer.pdf';
-    link.download = 'Alex-Developer-CV.pdf';
+    link.href = '/Thushanth-Uthayarajan.pdf';
+    link.download = 'Thushanth-Uthayarajan.pdf';
     link.click();
     
     toast({
