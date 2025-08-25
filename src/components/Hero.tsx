@@ -11,9 +11,9 @@ const Hero = () => {
           <Spline scene="https://prod.spline.design/tseagYYtOW41hKoM/scene.splinecode" />
         </div>
       </div>
-      {/* Hero Content overlapped on left, moved further left */}
-      <div className="relative z-10 flex flex-col items-center md:items-start justify-center w-full max-w-5xl mx-auto px-6 md:pl-0 md:pr-32">
-        <div className="w-full md:w-2/3 flex flex-col items-center md:items-start text-center md:text-left">
+      {/* Hero Content positioned on left side */}
+      <div className="relative z-10 flex flex-col items-center md:items-start justify-center w-full max-w-7xl mx-auto px-6">
+        <div className="w-full md:w-2/5 flex flex-col items-center md:items-start text-center md:text-left">
           <div className="bg-white/0 rounded-3xl border border-white/0 p-8 md:p-12 w-full shadow-2xl">
             <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">
               Full Stack Developer
