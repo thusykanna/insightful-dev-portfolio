@@ -4,7 +4,7 @@ import Spline from '@splinetool/react-spline';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden">
       {/* Spline 3D on the right, full height */}
       <div className="absolute inset-0 right-0 flex justify-end pointer-events-none z-0">
         <div className="w-full md:w-3/5 h-full flex items-center justify-end">
@@ -12,8 +12,8 @@ const Hero = () => {
         </div>
       </div>
       {/* Hero Content positioned on left side */}
-      <div className="relative z-10 flex flex-col items-center md:items-start justify-center w-full max-w-7xl mx-auto px-6">
-        <div className="w-full md:w-2/5 flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="relative z-10 flex flex-col items-center md:items-start justify-center w-full max-w-7xl mx-auto px-4 md:px-6 pt-20 md:pt-24 min-h-screen">
+        <div className="w-full md:w-2/5 lg:w-2/5 xl:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
           <div className="bg-white/0 rounded-3xl border border-white/0 p-8 md:p-12 w-full shadow-2xl">
             <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">
               Full Stack Developer
