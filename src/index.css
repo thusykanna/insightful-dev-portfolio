@@ -256,7 +256,7 @@
             mask-image: linear-gradient(to right, transparent 0, black 60px, black calc(100% - 60px), transparent 100%);
   }
 
-  /* Moving track – duplicate content for seamless loop */
+  /* Moving track – seamless infinite loop */
   .ribbon-track {
     position: absolute;
     display: inline-flex;
@@ -265,9 +265,13 @@
     gap: clamp(16px, 3vw, 32px);
     will-change: transform;
     animation: ribbon-move var(--ribbon-speed, 40s) linear infinite;
+    /* Start from off-screen to avoid visible jump */
+    transform: translateX(0);
   }
   .ribbon-track.reverse {
     animation-name: ribbon-move-reverse;
+    /* Reverse starts from the opposite end */
+    transform: translateX(-50%);
   }
 
   /* Each item box keeps spacing consistent */
@@ -294,14 +298,14 @@
     opacity: 1;
   }
 
-  /* Keyframes (transform-only → GPU friendly) */
+  /* Keyframes (transform-only → GPU friendly) - seamless infinite loop */
   @keyframes ribbon-move {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); } /* duplicate content → move by half */
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
   }
   @keyframes ribbon-move-reverse {
-    from { transform: translateX(-50%); }
-    to { transform: translateX(0); }
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
   }
 
   /* Reduced motion */
