@@ -32,14 +32,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mb-12">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-medium hover-glow"
+                className="bg-primary hover:bg-primary-foreground hover:text-primary border-2 border-primary hover:border-primary text-primary-foreground px-8 py-3 text-lg font-medium hover-glow transition-all duration-300"
               >
                 View My Work
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-primary/20 hover:border-primary/50 hover:bg-primary/10 px-8 py-3 text-lg font-medium"
+                className="border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-primary-foreground bg-background/80 backdrop-blur-sm px-8 py-3 text-lg font-medium transition-all duration-300"
               >
                 Get In Touch
               </Button>
@@ -48,15 +48,15 @@ const Hero = () => {
             {/* Social Links */}
             <div className="flex items-center justify-center md:justify-start space-x-6">
               <a href="https://github.com/thusykanna" target="_blank" rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover-glow">
+                className="p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
                 <Github size={24} />
               </a>
               <a href="https://www.linkedin.com/in/thushanth-uthayarajan/" target="_blank" rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover-glow">
+                className="p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
                 <Linkedin size={24} />
               </a>
               <a href="mailto:thushanth.22@cse.mrt.ac.lk"
-                className="p-3 rounded-full bg-secondary/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover-glow">
+                className="p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
                 <Mail size={24} />
               </a>
             </div>
