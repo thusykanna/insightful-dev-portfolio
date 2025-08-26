@@ -16,30 +16,23 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: '',
-      href: 'mailto:alex@example.com',
+      value: 'thushanth.22@cse.mrt.ac.lk',
+      href: 'mailto:thushanth.22@cse.mrt.ac.lk',
       color: 'hover:text-red-400'
     },
     {
       icon: Github,
       label: 'GitHub',
-      value: '@alexdev',
+      value: '@thusykanna',
       href: 'https://github.com/thusykanna',
       color: 'hover:text-white'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'Alex Developer',
+      value: 'Thushanth Uthayarajan',
       href: 'https://linkedin.com/in/thushanth-uthayarajan',
       color: 'hover:text-blue-400'
-    },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      value: '@alexdev_',
-      href: 'https://twitter.com',
-      color: 'hover:text-sky-400'
     }
   ];
 
@@ -108,7 +101,7 @@ Your resume shows strong technical competency but could benefit from better stor
   };
 
   const handleDirectEmail = () => {
-    window.location.href = 'mailto:alex@example.com?subject=Let\'s work together&body=Hi Alex, I\'d like to discuss a potential opportunity with you.';
+    window.location.href = 'mailto:thushanth.22@cse.mrt.ac.lk?subject=Let\'s work together&body=Hi Thushanth, I\'d like to discuss a potential opportunity with you.';
   };
 
   return (
@@ -151,7 +144,7 @@ Your resume shows strong technical competency but could benefit from better stor
                 <div className="space-y-3 pt-4 border-t border-border/30">
                   <Button 
                     onClick={handleDownloadCV}
-                    className="w-full bg-primary hover:bg-primary/90"
+                    className="w-full bg-primary hover:text-white hover:bg-primary/90"
                   >
                     <Download size={20} className="mr-2" />
                     Download CV
@@ -159,7 +152,7 @@ Your resume shows strong technical competency but could benefit from better stor
                   <Button 
                     onClick={handleDirectEmail}
                     variant="outline"
-                    className="w-full border-primary/20 hover:border-primary/50 hover:bg-primary/10"
+                    className="w-full border-primary text-primary hover:text-white hover:border-primary/50 hover:bg-primary/10"
                   >
                     <Send size={20} className="mr-2" />
                     Send Direct Email
@@ -171,7 +164,7 @@ Your resume shows strong technical competency but could benefit from better stor
 
           {/* Resume Analyzer */}
           <div className="lg:col-span-2">
-            <Card>
+            <Card className="h-full">
               <CardHeader>
                 <CardTitle className="font-space-grotesk flex items-center">
                   <Bot size={24} className="mr-2 text-primary" />
@@ -191,14 +184,14 @@ Your resume shows strong technical competency but could benefit from better stor
                     placeholder="Copy and paste your resume content here for analysis..."
                     value={resumeText}
                     onChange={(e) => setResumeText(e.target.value)}
-                    className="min-h-[200px] resize-none"
+                    className="min-h-[230px] resize-none"
                   />
                 </div>
 
                 <Button
                   onClick={handleResumeAnalyze}
                   disabled={isAnalyzing}
-                  className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90"
+                  className="w-full bg-gradient-to-r from-primary to-accent hover:text-white hover:opacity-90"
                 >
                   {isAnalyzing ? (
                     <>
@@ -247,7 +240,8 @@ Your resume shows strong technical competency but could benefit from better stor
             <Button 
               size="lg"
               onClick={handleDirectEmail}
-              className="bg-primary hover:bg-primary/90 px-8"
+              className="bg-primary text-black border-2 border-primary px-8 py-3 text-md font-medium transition-all duration-300 hover:text-white hover-glow"
+
             >
               Let's Talk
             </Button>

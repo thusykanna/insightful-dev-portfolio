@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Menu, X, Mail, Github, Linkedin} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -8,7 +8,6 @@ const Header = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/thusykanna', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/thushanth-uthayarajan/', label: 'LinkedIn' },
-    // { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
     { icon: Mail, href: 'mailto:thushanth.22@cse.mrt.ac.lk', label: 'Email' },
   ];
 
@@ -21,12 +20,12 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50" style={{ backgroundColor: '#01031c' }}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="font-space-grotesk font-bold text-xl text-primary">
-            Portfolio
+            MyPortfolio
           </div>
 
           {/* Desktop Navigation */}
@@ -59,12 +58,12 @@ const Header = () => {
             <Button 
               variant="outline" 
               size="sm"
-              className="ml-4 border-primary/20 hover:border-primary/50 hover:bg-primary/10"
+              className="ml-4 border-primary/20 bg-blue-500 cursor-pointer hover:bg-blue-500 hover:shadow-md hover:shadow-blue-500 transition-all duration-350"
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/Thushanth-Uthayarajan.pdf';
-                link.download = 'Thushanth-Uthayarajan.pdf';
-                link.click();
+              const link = document.createElement('a');
+              link.href = '/Thushanth-Uthayarajan.pdf';
+              link.download = 'Thushanth-Uthayarajan.pdf';
+              link.click();
               }}
             >
               Download CV
