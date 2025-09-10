@@ -4,7 +4,7 @@ import Spline from '@splinetool/react-spline';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-start justify-center overflow-hidden" style={{ backgroundColor: '#01031c' }}>
+    <section id='about' className="relative min-h-screen flex items-start justify-center overflow-hidden" style={{ backgroundColor: '#01031c' }}>
       {/* Right Spline (3/5 width) */}
       <div className="absolute inset-y-0 right-0 flex items-center justify-end pointer-events-none z-0 w-3/5">
         <Spline scene="https://prod.spline.design/tseagYYtOW41hKoM/scene.splinecode" />
@@ -30,12 +30,14 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mb-12">
                 <Button 
+                onClick={() => window.location.href = '#projects'}
                 size="lg" 
                 className="bg-primary text-black border-2 border-primary px-8 py-3 text-lg font-medium transition-all duration-300 hover:text-white hover-glow"
                 >
                 View My Work
                 </Button>
               <Button 
+                onClick={() => window.location.href = '#contact'}
                 variant="outline" 
                 size="lg"
                 className="bg-primary-foreground hover:bg-primary-foreground hover:text-white border-2 border-primary hover:border-primary text-primary px-8 py-3 text-lg font-medium hover-glow transition-all duration-300"
