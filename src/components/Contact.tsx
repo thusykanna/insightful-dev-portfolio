@@ -125,7 +125,7 @@ const Contact = () => {
           </Card>
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-8 mb-[-60px]">
           <p className="text-muted-foreground">
             Looking forward to hearing from you!
           </p>

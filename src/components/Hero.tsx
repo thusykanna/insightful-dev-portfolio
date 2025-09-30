@@ -9,19 +9,19 @@ const Hero = () => {
   return (
     <section id='about' className="relative min-h-screen flex items-start justify-center overflow-hidden" style={{ backgroundColor: '#01031c' }}>
       {/* Right Spline (3/5 width) */}
-      <div className="absolute inset-y-0 right-0 flex items-center justify-end pointer-events-none z-0 w-3/5">
+      <div className="absolute inset-y-0 right-0 flex items-center justify-end pointer-events-none z-0 w-3/5 lg:w-1/2 xl:w-2/5">
         <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 animate-pulse rounded-lg"></div>}>
           <Spline scene="https://prod.spline.design/tseagYYtOW41hKoM/scene.splinecode" />
         </Suspense>
       </div>
       {/* Hero Content positioned on left side */}
-      <div className="relative z-10 flex flex-col items-center md:items-start justify-center w-full max-w-7xl mx-auto px-4 md:px-6 pt-20 md:pt-3 min-h-screen md:ml-[90px]">
-        <div className="w-full md:w-2/5 lg:w-2/5 xl:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
-          <div className="bg-white/0 rounded-3xl border border-white/0 p-8 md:p-12 w-full shadow-2xl">
-            <p className="text-primary font-medium mb-4 tracking-wide uppercase text-sm">
+      <div className="relative z-10 flex flex-col items-center md:items-start justify-center w-full max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-8 min-h-screen md:ml-8 lg:ml-12 xl:ml-16">
+        <div className="w-full md:w-3/5 lg:w-2/5 xl:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="bg-white/0 rounded-3xl border border-white/0 p-6 md:p-8 lg:p-10 w-full shadow-2xl">
+            <p className="text-primary font-medium mb-3 md:mb-4 tracking-wide uppercase text-xs md:text-sm">
               Full Stack Developer
             </p>
-            <h1 className="font-space-grotesk font-bold text-5xl md:text-7xl lg:text-8xl mb-6 text-glow">
+            <h1 className="font-space-grotesk font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-6 text-glow leading-tight">
               Hi, I'm{' '}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 {"<"}
@@ -29,41 +29,41 @@ const Hero = () => {
                 {"/>"}
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
               Passionate about clean code, innovative solutions, and user-centric design.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mb-12">
-                <Button 
+            <div className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3 md:gap-4 mb-8 md:mb-12">
+                <Button
                 onClick={() => window.location.href = '#projects'}
-                size="lg" 
-                className="bg-primary text-black border-2 border-primary px-8 py-3 text-lg font-medium transition-all duration-300 hover:text-white hover-glow"
+                size="lg"
+                className="bg-primary text-black border-2 border-primary px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-medium transition-all duration-300 hover:text-white hover-glow"
                 >
                 View My Work
                 </Button>
-              <Button 
+              <Button
                 onClick={() => window.location.href = '#contact'}
-                variant="outline" 
+                variant="outline"
                 size="lg"
-                className="bg-primary-foreground hover:bg-primary-foreground hover:text-white border-2 border-primary hover:border-primary text-primary px-8 py-3 text-lg font-medium hover-glow transition-all duration-300"
+                className="bg-primary-foreground hover:bg-primary-foreground hover:text-white border-2 border-primary hover:border-primary text-primary px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-medium hover-glow transition-all duration-300"
               >
                 Get In Touch
               </Button>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center justify-center md:justify-start space-x-6">
+            <div className="flex items-center justify-center md:justify-start space-x-4 md:space-x-6">
               <a href="https://github.com/thusykanna" target="_blank" rel="noopener noreferrer"
-                className="p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
-                <Github size={24} />
+                className="p-2 md:p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
+                <Github size={20} className="md:w-6 md:h-6" />
               </a>
               <a href="https://www.linkedin.com/in/thushanth-uthayarajan/" target="_blank" rel="noopener noreferrer"
-                className="p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
-                <Linkedin size={24} />
+                className="p-2 md:p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
+                <Linkedin size={20} className="md:w-6 md:h-6" />
               </a>
               <a href="mailto:thushanth.22@cse.mrt.ac.lk"
-                className="p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
-                <Mail size={24} />
+                className="p-2 md:p-3 rounded-full bg-background/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground text-muted-foreground hover:border-primary transition-all duration-300 hover:scale-110 hover-glow">
+                <Mail size={20} className="md:w-6 md:h-6" />
               </a>
             </div>
           </div>
