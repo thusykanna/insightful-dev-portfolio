@@ -24,9 +24,12 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="font-space-grotesk font-bold text-xl text-primary">
-            MyPortfolio
-          </div>
+            <div
+            className="font-bold text-xl text-primary"
+            style={{ fontFamily: "'Inter', serif" }}
+            >
+            My Portfolio
+            </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
