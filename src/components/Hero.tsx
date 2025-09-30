@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section id='about' className="relative min-h-screen flex items-start justify-center overflow-hidden" style={{ backgroundColor: '#01031c' }}>
       {/* Right Spline (3/5 width) */}
-      <div className="absolute inset-y-0 right-0 flex items-center justify-end pointer-events-none z-0 w-3/5 lg:w-1/2 xl:w-2/5">
+      <div className="absolute inset-y-0 right-0 flex items-center justify-end pointer-events-none z-0 w-3/5 lg:w-1/2 xl:w-3/5">
         <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 animate-pulse rounded-lg"></div>}>
           <Spline scene="https://prod.spline.design/tseagYYtOW41hKoM/scene.splinecode" />
         </Suspense>
