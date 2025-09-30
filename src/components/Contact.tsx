@@ -1,15 +1,12 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Github, Linkedin, Twitter, Download, FileText, Send, Bot, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Github, Linkedin, Mail, Download, Send } from 'lucide-react';
+import profilePic from '@/assets/thushanth.jpg';
 
 const Contact = () => {
-  const [resumeText, setResumeText] = useState('');
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [analysis, setAnalysis] = useState('');
   const { toast } = useToast();
 
   const contactLinks = [
@@ -36,58 +33,6 @@ const Contact = () => {
     }
   ];
 
-  const handleResumeAnalyze = async () => {
-    if (!resumeText.trim()) {
-      toast({
-        title: "Please enter resume text",
-        description: "Add your resume content to get AI-powered analysis.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    setIsAnalyzing(true);
-    
-    // Simulate AI analysis (replace with actual API call)
-    setTimeout(() => {
-      const mockAnalysis = `
-**Resume Analysis Report**
-
-**Strengths:**
-• Strong technical background with modern technologies
-• Good project diversity showing full-stack capabilities
-• Clear progression in responsibilities and impact
-
-**Areas for Improvement:**
-• Consider adding more quantifiable achievements (e.g., "Increased performance by 40%")
-• Include soft skills and leadership experience
-• Add certifications or continuous learning activities
-
-**Recommendations:**
-• Reorganize sections to highlight most relevant experience first
-• Use action verbs to start bullet points (Developed, Implemented, Led)
-• Include keywords from target job descriptions
-• Consider adding a brief professional summary at the top
-
-**Formatting Suggestions:**
-• Ensure consistent formatting and spacing
-• Use a clean, professional font
-• Keep to 1-2 pages maximum
-• Include contact information prominently
-
-**Score: 7.5/10**
-Your resume shows strong technical competency but could benefit from better storytelling and quantified impact statements.
-      `;
-      
-      setAnalysis(mockAnalysis);
-      setIsAnalyzing(false);
-      toast({
-        title: "Analysis Complete!",
-        description: "Your resume has been analyzed with AI-powered insights.",
-      });
-    }, 3000);
-  };
-
   const handleDownloadCV = () => {
     const link = document.createElement('a');
     link.href = '/Thushanth-Uthayarajan.pdf';
@@ -111,141 +56,79 @@ Your resume shows strong technical competency but could benefit from better stor
           <h2 className="font-space-grotesk font-bold text-4xl md:text-5xl mb-6">
             Let's Work Together
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Get in touch and let's create something amazing together.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Contact Information */}
-          <div className="lg:col-span-1">
-            <Card className="h-fit">
-              <CardHeader>
-                <CardTitle className="font-space-grotesk">Get In Touch</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {contactLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={link.label !== 'Email' ? '_blank' : undefined}
-                    rel={link.label !== 'Email' ? 'noopener noreferrer' : undefined}
-                    className={`flex items-center space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-all duration-300 group ${link.color}`}
-                  >
-                    <link.icon size={24} className="text-muted-foreground group-hover:scale-110 transition-transform duration-300" />
-                    <div>
-                      <div className="font-medium">{link.label}</div>
-                      <div className="text-sm text-muted-foreground">{link.value}</div>
+        <div className="max-w-4xl mx-auto">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Mail className="w-5 h-5" />
+                Get In Touch
+              </CardTitle>
+              <CardDescription>
+                Ready to bring your ideas to life? Let's connect and discuss your next project.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* Profile Picture */}
+                <div className="md:col-span-1 flex justify-center md:justify-start mt-10">
+                    <div className="relative">
+                    <img
+                      src={profilePic}
+                      alt="Thushanth Uthayarajan"
+                      className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-primary/20 shadow-lg"
+                    />
                     </div>
-                  </a>
-                ))}
-
-                {/* Action Buttons */}
-                <div className="space-y-3 pt-4 border-t border-border/30">
-                  <Button 
-                    onClick={handleDownloadCV}
-                    className="w-full bg-primary hover:text-white hover:bg-primary/90"
-                  >
-                    <Download size={20} className="mr-2" />
-                    Download CV
-                  </Button>
-                  <Button 
-                    onClick={handleDirectEmail}
-                    variant="outline"
-                    className="w-full border-primary text-primary hover:text-white hover:border-primary/50 hover:bg-primary/10"
-                  >
-                    <Send size={20} className="mr-2" />
-                    Send Direct Email
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Resume Analyzer */}
-          <div className="lg:col-span-2">
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="font-space-grotesk flex items-center">
-                  <Bot size={24} className="mr-2 text-primary" />
-                  AI Resume Analyzer
-                  <Sparkles size={20} className="ml-2 text-accent" />
-                </CardTitle>
-                <p className="text-muted-foreground">
-                  Get AI-powered insights and suggestions to improve your resume with modern best practices.
-                </p>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Paste your resume text here:
-                  </label>
-                  <Textarea
-                    placeholder="Copy and paste your resume content here for analysis..."
-                    value={resumeText}
-                    onChange={(e) => setResumeText(e.target.value)}
-                    className="min-h-[230px] resize-none"
-                  />
                 </div>
 
-                <Button
-                  onClick={handleResumeAnalyze}
-                  disabled={isAnalyzing}
-                  className="w-full bg-gradient-to-r from-primary to-accent hover:text-white hover:opacity-90"
-                >
-                  {isAnalyzing ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2" />
-                      Analyzing Resume...
-                    </>
-                  ) : (
-                    <>
-                      <FileText size={20} className="mr-2" />
-                      Analyze My Resume
-                    </>
-                  )}
-                </Button>
+                {/* Contact Information */}
+                <div className="md:col-span-2 space-y-6">
+                  <div className="grid gap-4">
+                    {contactLinks.map((link, index) => (
+                      <a
+                        key={index}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-3 p-3 rounded-lg border border-border/20 hover:border-primary/50 transition-all duration-300 hover:bg-primary/5 ${link.color}`}
+                      >
+                        <link.icon className="w-5 h-5" />
+                        <div>
+                          <div className="font-medium">{link.label}</div>
+                          <div className="text-sm text-muted-foreground">{link.value}</div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
 
-                {analysis && (
-                  <Card className="bg-secondary/30 border-primary/20">
-                    <CardContent className="p-4">
-                      <h4 className="font-semibold mb-3 flex items-center">
-                        <Sparkles size={18} className="mr-2 text-accent" />
-                        AI Analysis Results
-                      </h4>
-                      <div className="prose prose-sm max-w-none">
-                        <pre className="whitespace-pre-wrap text-sm text-muted-foreground font-inter">
-                          {analysis}
-                        </pre>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-              </CardContent>
-            </Card>
-          </div>
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <Button 
+                      onClick={handleDownloadCV}
+                      className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Download CV
+                    </Button>
+                    <Button 
+                      onClick={handleDirectEmail}
+                      variant="outline"
+                      className="flex-1"
+                    >
+                      <Send className="w-4 h-4 mr-2" />
+                      Send Email
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
-        {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-4 p-6 rounded-2xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
-            <div className="text-left">
-              <h3 className="font-space-grotesk font-semibold text-lg">
-                Ready to start your project?
-              </h3>
-              <p className="text-muted-foreground">
-                Let's discuss how we can bring your vision to life.
-              </p>
-            </div>
-            <Button 
-              size="lg"
-              onClick={handleDirectEmail}
-              className="bg-primary text-black border-2 border-primary px-8 py-3 text-md font-medium transition-all duration-300 hover:text-white hover-glow"
-
-            >
-              Let's Talk
-            </Button>
-          </div>
+          <p className="text-muted-foreground">
+            Looking forward to hearing from you!
+          </p>
         </div>
       </div>
     </section>

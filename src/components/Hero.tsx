@@ -1,13 +1,18 @@
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
+import { Suspense, lazy } from 'react';
+
+// Lazy load the heavy Spline component
+const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const Hero = () => {
   return (
     <section id='about' className="relative min-h-screen flex items-start justify-center overflow-hidden" style={{ backgroundColor: '#01031c' }}>
       {/* Right Spline (3/5 width) */}
       <div className="absolute inset-y-0 right-0 flex items-center justify-end pointer-events-none z-0 w-3/5">
-        <Spline scene="https://prod.spline.design/tseagYYtOW41hKoM/scene.splinecode" />
+        <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 animate-pulse rounded-lg"></div>}>
+          <Spline scene="https://prod.spline.design/tseagYYtOW41hKoM/scene.splinecode" />
+        </Suspense>
       </div>
       {/* Hero Content positioned on left side */}
       <div className="relative z-10 flex flex-col items-center md:items-start justify-center w-full max-w-7xl mx-auto px-4 md:px-6 pt-20 md:pt-3 min-h-screen md:ml-[90px]">
